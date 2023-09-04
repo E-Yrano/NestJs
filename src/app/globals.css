@@ -1,0 +1,10 @@
+html {
+    background-color: gray;
+}
+
+.image {
+    display: block;
+    height: 300px;
+    width: 300px;
+    
+}

@@ -13,7 +13,7 @@ export function Control() {
             <li>
                 <input type='button' value="delete" onClick={()=>{
                 const option = {method : 'DELETE'}
-                fetch("http://localhost:9999/topics"+id, option)
+                fetch(process.env.NEXT_PUBLIC_API_URL+"topics/"+id, option)
                     .then(resp=> resp.json())
                         .then(result => {
                             router.push("/");

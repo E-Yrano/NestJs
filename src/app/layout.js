@@ -8,7 +8,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   // resp 뒤에 붙은 {next: { revalidate: 0 } } 은 캐시를 0초동안 유지하는 명령어, {cache:'no-store'}를 사용해도 됨
-  const resp = await fetch('http://localhost:9999/topics', {next: { revalidate: 0 } }); 
+  const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}topics/`, {next: { revalidate: 0 } }); 
   const topics = await resp.json();
   return (
     <html>
